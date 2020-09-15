@@ -31,8 +31,8 @@ class MRWordCountUtility(MRJob):
         # and yield the sums when all lines have been processed. The results
         # will be collected by the reducer.
         # TRADUCCIÓN: En realidad, no se cede nada por cada línea. 
-        # En su lugar, se recojen y se obtienen las sumas cuando se hayan procesado todas las líneas. 
-        # Los resultados serán recogidos por el reductor.
+        # En su lugar, se recojen y se obtienen las sumas, y cuando se hayan procesado todas las líneas
+        # los resultados serán recogidos por el reductor.
         self.chars += len(line) + 1  # +1 for newline
         self.words += sum(1 for word in line.split() if word.strip())
         self.lines += 1
